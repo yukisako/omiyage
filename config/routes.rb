@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+
+  get 'home/index'
+
+  get 'recommend_list/recommend'
+
+  get 'ranking/have_list'
+
+  get 'ranking/want_list'
+
+  #root 'welcome#index'
+  
+  #twitterログイン関係
+  root 'home#index'
+  get "home/index"
+  get '/auth/:provider/callback', :to => 'sessions#callback'
+  post '/auth/:provider/callback', :to => 'sessions#callback'
+  get '/logout' => 'sessions#destroy', :as => :logout
+  get    'signup', to: 'users#new'
+  get    'login' , to: 'sessions#new'
+  post   'login' , to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  get    'have_list', to: 'ranking#have_list'
+  get    'want_list', to: 'ranking#want_list'
+
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+  resources :ownerships, only: [:create, :destroy]
+  resources :items , only: [:new , :show]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

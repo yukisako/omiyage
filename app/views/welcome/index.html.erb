@@ -1,0 +1,10 @@
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-contents">
+      <h1>心のこもったお土産を</h1>
+      <%= link_to 'お土産くん(仮)を始める' , login_path, class: "btn btn-success btn-lg" %>
+    </div>
+  </div>
+</div>
+
+<%= render 'items/list' , items: @items %>
