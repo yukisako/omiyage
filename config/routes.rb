@@ -8,14 +8,14 @@ Rails.application.routes.draw do
 
   get 'ranking/want_list'
 
-  #root 'welcome#index'
+  root 'welcome#index'
   
   #twitterログイン関係
-  root 'home#index'
   get "home/index"
   get '/auth/:provider/callback', :to => 'sessions#callback'
   post '/auth/:provider/callback', :to => 'sessions#callback'
   get '/logout' => 'sessions#destroy', :as => :logout
+  
   get    'signup', to: 'users#new'
   get    'login' , to: 'sessions#new'
   post   'login' , to: 'sessions#create'
