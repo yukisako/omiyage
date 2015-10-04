@@ -18,8 +18,10 @@
           <ul class="nav navbar-nav navbar-right">
             <% unless logged_in? %>
               <li><%= link_to "新規登録", signup_path %></li>
+              <!--とりあえず今はtwitterログインのみに
               <li><%= link_to "ログイン", login_path %></li>
-               <%= link_to "ツイッターログイン", '/auth/twitter' %>
+              -->
+              <li><%= link_to "login with Twitter", '/auth/twitter' %></li>
 
             <% else %>
               <li class="dropdown">

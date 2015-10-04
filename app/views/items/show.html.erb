@@ -25,7 +25,7 @@
         <h4 class="side-box-title">Haveしたユーザー</h4>
         <div class="side-box-body">
           <% @item.have_users.each do |u| %>
-            <%= link_to gravatar_for(u, size: 20), u %>
+            <%= link_to "😃", u %>
           <% end %>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <h4 class="side-box-title">Wantしたユーザー</h4>
         <div class="side-box-body">
           <% @item.want_users.each do |u|%>
-            <%= link_to gravatar_for(u, size: 20), u %>
+            <%= link_to "😊", u %>
           <% end %>
         </div>
       </div>

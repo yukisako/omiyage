@@ -1,2 +1,41 @@
-<h1>RecommendList#recommend</h1>
-<p>Find me in app/views/recommend_list/recommend.html.erb</p>
+<center><h1>ご当地のおすすめお土産</h1></center>
+<%= render 'recommend_list/select' %>
+
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+  	<% if @amazon_items %>
+		<% @amazon_items.each do |item| %>
+	      <div class="item-box">
+	        <div class="image">
+	          <div class="img-wrap">
+	            <% #TODO 商品画像 %>
+	            <% #LargeImageのURLに入ってる情報を取ってくる %>
+	            <% unless item.get('LargeImage/URL') %>
+	              <%= image_tag("no-image.png" , alt: item.get('ItemAttributes/Title')) %>
+	            <% else %>
+	              <%= image_tag(item.get('LargeImage/URL') , alt: item.get('ItemAttributes/Title')) %>
+	            <% end %>
+	          </div>
+	        </div>
+	        <div class="detail">
+	          <p class="title">
+	            <%= item.get('ItemAttributes/Title') %>
+	          </p>
+	        </div>
+	        <div class="action clearfix">
+	          <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Want") ,
+	                      :class => "want-#{item.get('ASIN')} btn-want btn btn-danger btn-sm want",
+	                      :remote => true,
+	                      :method => :post %>
+	          <%= link_to "" , ownerships_path(asin: item.get('ASIN') , type: "Have") ,
+	                      :class => "have-#{item.get('ASIN')} btn-have btn btn-warning btn-sm have",
+	                      :remote => true,
+	                      :method => :post %>
+	        </div>
+	      </div>
+	    <% end %>
+	<% else %>
+	<h2> 都道府県を選択するとおすすめお土産がみられます </h2>
+	<% end %>
+  </div>
+</div>
