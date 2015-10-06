@@ -22,18 +22,18 @@
     </div>
     <div class="item-single-side">
       <div class="side-box">
-        <h4 class="side-box-title">Haveしたユーザー</h4>
+        <h4 class="side-box-title">ほしい！したユーザー</h4>
         <div class="side-box-body">
-          <% @item.have_users.each do |u| %>
-            <%= link_to "😃", u %>
+          <% @item.want_users.each do |u|%>
+            <%= link_to "😊 #{u.screen_name}", u %>
           <% end %>
         </div>
       </div>
       <div class="side-box">
-        <h4 class="side-box-title">Wantしたユーザー</h4>
+        <h4 class="side-box-title">いいね！したユーザー</h4>
         <div class="side-box-body">
-          <% @item.want_users.each do |u|%>
-            <%= link_to "😊", u %>
+          <% @item.have_users.each do |u| %>
+            <%= link_to "😃 #{u.screen_name}", u %>
           <% end %>
         </div>
       </div>

@@ -111,26 +111,26 @@
   }
   .want {
     &:before {
-      content: "Want";
+      content: "ほしい！";
     }
   }
   .have {
     &:before {
-      content: "Have";
+      content: "いいね！";
     }
   }
   .wanted {
     background-color: #5cb85c;
     border-color: darken(#5cb85c, 5%);
     &:before {
-      content: "Wanted";
+      content: "ほしくない...";
     }
   }
   .haved {
     background-color: #5cb85c;
     border-color: darken(#5cb85c, 5%);
     &:before {
-      content: "Haved";
+      content: "よくない...";
     }
   }
 }

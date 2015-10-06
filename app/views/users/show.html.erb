@@ -4,10 +4,10 @@
 <% end %> 
 <%= render 'profile' , user: @user %>
 
-<center><h1> 欲しいものリスト <h1></center>
+<center><h1> ほしい‼︎ <h1></center>
 <% want = @user.want_items %>
 <%= render 'items/list' , items: want %>
 
-<center><h1> 持っているものリスト <h1></center>
+<center><h1> いいね!! <h1></center>
 <% have = @user.have_items %>
 <%= render 'items/list' , items: have %>

@@ -2,7 +2,11 @@
   <div class="cover-inner">
     <div class="cover-contents">
       <h1>心のこもったお土産を</h1>
-      <%= link_to 'お土産くん(仮)を始める' , login_path, class: "btn btn-success btn-lg" %>
+      <% unless logged_in? %>
+      	<%= link_to 'たのみやげを始める' , '/auth/twitter', class: "btn btn-success btn-lg" %>
+      <% else %>
+      	<%= link_to 'おみやげを検索' , new_item_path, class: "btn btn-success btn-lg" %>
+      <% end %>
     </div>
   </div>
 </div>
