@@ -31,7 +31,11 @@ gem 'bootstrap-sass'
 # https://github.com/jugend/amazon-ecs
 gem 'amazon-ecs'
 
-
+  #twitter login
+  gem 'omniauth'
+  gem 'omniauth-twitter'
+  gem 'settingslogic'
+  
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do
@@ -56,9 +60,6 @@ group :development, :test do
   gem 'pry-rails'
 
 
-  #twitter login
-  gem 'omniauth'
-  gem 'omniauth-twitter'
-  gem 'settingslogic'
+
 end
 
