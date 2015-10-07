@@ -8,7 +8,7 @@
   <% if @amazon_items.present? %>
     <div class="alert alert-info">
       <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-      気になったアイテムが欲しければ「Want」持ってれば「Have」しましょう
+      これから欲しければ「ほしい！」もらって嬉しかったものは「いいね！」しましょう
     </div>
     <%= render 'amazon_items' , amazon_items: @amazon_items %>
   <% elsif params[:q].present? %>
