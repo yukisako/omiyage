@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'bot/start'
+
   get 'home/index'
 
   get 'recommend_list/recommend'
