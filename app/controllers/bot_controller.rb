@@ -114,7 +114,7 @@ class BotController < ApplicationController
     
     db =  PG::connect(:host => 'ec2-54-197-241-239.compute-1.amazonaws.com', :user => 'styrdvehetgpob', :password => '0leNDKSqENynNM_tmvVPjZrMdJ', :dbname => 'd88rkfagj4j3s2', :port => "5432")
     bot_id = "omiyage_list"
-    
+    client_rest.update "データベースにも接続出来てるよ"
     client_stream.user do |object|
       case object
       when Twitter::Tweet
