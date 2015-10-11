@@ -110,6 +110,8 @@ class BotController < ApplicationController
       options[:associate_tag]     = "m035f-22"
     end
     
+    client_rest.update "一応うごいてるよ"
+    
     db =  PG::connect(:host => 'ec2-54-197-241-239.compute-1.amazonaws.com', :user => 'styrdvehetgpob', :password => '0leNDKSqENynNM_tmvVPjZrMdJ', :dbname => 'd88rkfagj4j3s2', :port => "5432")
     bot_id = "omiyage_list"
     
