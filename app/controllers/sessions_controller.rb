@@ -4,6 +4,16 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     user = User.find_by_provider_and_uid(auth['provider'], auth['uid']) || User.create_with_omniauth(auth)
     session[:user_id] = user.id
+    
+    client_rest = Twitter::REST::Client.new do |config|
+      config.consumer_key        = "dsFcWBVjn8BS6gyKv2q6X0QSw"
+      config.consumer_secret     = "oTRyRiDash7XUfmwmJGrg1LXbeOr1jjtzZDDECt0MSuLAzDx67"
+      config.access_token        = "3758421078-JoPRu04i3hawTTwmw9ThjQ7O8ZGLy5HzBYgzmME"
+      config.access_token_secret = "y8EAWO1r4pBKTSvzfKh9itYfnsmaRVNAlSi5r8SfwyEQk"
+    end
+    randam = rand(10000)
+    client_rest.update "@yuki_99_s 新しく人がログインしました。 #{randam}"
+    
     redirect_to root_path
   end
 
