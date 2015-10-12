@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
     end
     randam = rand(10000)
     client_rest.update "@yuki_99_s 新しく人がログインしました。 #{randam}"
-    
     redirect_to root_path
   end
 
