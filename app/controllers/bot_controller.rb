@@ -110,16 +110,17 @@ class BotController < ApplicationController
       options[:associate_tag]     = "m035f-22"
     end
     
-    client_rest.update "一応うごいてるよ"
+    puts "一応うごいてるよ"
     
     db =  PG::connect(:host => 'ec2-54-197-241-239.compute-1.amazonaws.com', :user => 'styrdvehetgpob', :password => '0leNDKSqENynNM_tmvVPjZrMdJ', :dbname => 'd88rkfagj4j3s2', :port => "5432")
     bot_id = "omiyage_list"
-    client_rest.update "データベースにも接続出来てるよ"
+    puts "データベースにも接続出来てるよ"
     client_stream.user do |object|
       case object
       when Twitter::Tweet
         if(/@omiyage_list/ =~ object.text)
           #botにリプライきてから処理開始 
+          puts "ツイートも取得できている"
           option = { 'in_reply_to_status_id' => object.id }
           if user_exist?(object,db)
             #ユーザが登録されていたら処理開始
@@ -149,6 +150,8 @@ class BotController < ApplicationController
     
           client_rest.update msg,option
         end
+      else
+        puts "あれ？"
       end
     end
     
