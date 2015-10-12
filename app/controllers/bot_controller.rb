@@ -118,11 +118,10 @@ class BotController < ApplicationController
     client_stream.user do |object|
       client_rest.update "3"
       case object
-      client_rest.update "4"
       when Twitter::Tweet
         if(/@omiyage_list/ =~ object.text)
           #botにリプライきてから処理開始 
-          client_rest.update "5"
+          client_rest.update "4"
           option = { 'in_reply_to_status_id' => object.id }
           if user_exist?(object,db)
             #ユーザが登録されていたら処理開始
