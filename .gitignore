@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 
-/rootkey.csv
+
+rootkey.csv
 # ignore bot files
 /bot
