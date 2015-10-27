@@ -71,3 +71,8 @@
   display:block;
   margin:0 auto;
 }
+.menu ul li{width:31.5%;font-size:14px;}
+
+@media screen and (min-width:600px){
+.menu ul li{width:14.24%;}
+}
