@@ -16,7 +16,7 @@
 !/log/.keep
 /tmp
 
-
+/config/settings.yml
 rootkey.csv
 # ignore bot files
 /bot
